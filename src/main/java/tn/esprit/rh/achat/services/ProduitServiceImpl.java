@@ -11,7 +11,6 @@ import tn.esprit.rh.achat.repositories.StockRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
-
 @Service
 @Slf4j
 public class ProduitServiceImpl implements IProduitService {
