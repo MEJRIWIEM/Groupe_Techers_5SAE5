@@ -6,6 +6,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,7 +34,7 @@ import static org.mockito.Mockito.times;
  class FactureServiceImpTest {
 	@InjectMocks
 	private FactureServiceImpl factureServiceImpl;
-	@MockBean
+	@Mock
 	private FactureRepository factureRepository;
 	@Test
 	public void retrieveAllFactures() {
