@@ -29,6 +29,13 @@ stage('MVN TEST'){
         sh 'mvn test'
     }
 }
+stage("Maven Build") {
+            steps {
+                script {
+                    sh "mvn package -DskipTests=true"
+                }
+            }
+        }
   stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
