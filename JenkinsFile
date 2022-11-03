@@ -40,21 +40,27 @@ stage("Maven Build") {
             steps {
                 script {
                  def   pom = readMavenPom file: "pom.xml";
-                 def nexusRepo= readPomVersion.version.endWith("SNAPSHOT")?"":""
-                    nexusArtifactUploader artifacts:[
-                      [
-                        artifactId:'achat',
-                        classifier:'',file:'target/achat-1.0-SNAPSHOT.jar'
-                        type:'jar'
-                      ]  
-                    ],
-                    credentialsId:'nexus-auth',
-                    groupId:'tn.esprit',
-                    nexusUrl:'192.168.56.5:8081',
-                    nexusVersion:'nexus3',
-                    protocol:'http',
-                    repository:nexusRepo,
-                    version:"${readPomVersion.version}"
+                 def nexusRepo= readPomVersion.version.endWith("SNAPSHOT")?"demoapp-snapshot":"demoapp-release"
+                     nexusArtifactUploader(
+                            nexusVersion: 'nexus3',
+                            protocol: 'http',
+                            nexusUrl: '192.168.2.25:8081',
+                            groupId: 'tn.esprit.rh',
+                            version: 'pom.2.0',
+                            repository: 'maven-releases',
+                            credentialsId: 'nexus',
+                            artifacts: [
+                                [artifactId: 'achat',
+                                classifier: '',
+                                file: 'target/achat-1.0-SPANSHOT',
+                                type: "jar"],
+                                [artifactId: 'pom.achat',
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
+                        );
+            
                 }
             }
         }
