@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.test;
+package tn.esprit.rh.achat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
