@@ -14,7 +14,7 @@ public interface IFournisseurService {
 
 	Fournisseur updateFournisseur(Fournisseur f);
 
-	Fournisseur retrieveFournisseur(Long id);
+	Fournisseur retrieveFournisseur(Long i);
 	
 	void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur);
 
