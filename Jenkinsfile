@@ -11,7 +11,7 @@ environment {
         NEXUS_URL = "172.10.0.140:8081"
         NEXUS_REPOSITORY = "java-app"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
-        registry = "ALAAMOALLA/alpine" 
+        registry = "alaamoalla/alpine" 
         registryCredential = 'dockerHub' 
         dockerImage = '' 
     }
