@@ -11,6 +11,9 @@ environment {
         NEXUS_URL = "172.10.0.140:8081"
         NEXUS_REPOSITORY = "java-app"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+        registry = "ALAAMOALLA/alpine" 
+        registryCredential = 'dockerHub' 
+        dockerImage = '' 
     }
 
     stages {
@@ -85,6 +88,47 @@ stage("Maven Build") {
                 }
             }
         }
+        stage('Building our image') { 
+
+            steps { 
+
+                script { 
+
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+
+                }
+
+            } 
+
+        }
+
+        stage('Deploy our image') { 
+
+            steps { 
+
+                script { 
+
+                    docker.withRegistry( '', registryCredential ) { 
+
+                        dockerImage.push() 
+
+                    }
+
+                } 
+
+            }
+
+        } 
+
+        stage('Cleaning up') { 
+
+            steps { 
+
+                sh "docker rmi $registry:$BUILD_NUMBER" 
+
+            }
+
+        } 
 
 }
     }
