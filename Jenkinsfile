@@ -9,7 +9,7 @@ environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "172.10.0.140:8081"
-        NEXUS_REPOSITORY = "demoapp-snapshot"
+        NEXUS_REPOSITORY = "java-app"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
     }
 
