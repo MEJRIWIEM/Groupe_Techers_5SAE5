@@ -8,7 +8,7 @@ pipeline {
 environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "10.1.0.102:8081"
+        NEXUS_URL = "172.10.0.140:8081"
         NEXUS_REPOSITORY = "demoapp-snapshot"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
     }
@@ -43,6 +43,13 @@ stage("Maven Build") {
                 }
             }
         }
+        
+        stage('MVN SONARQUBE'){
+    steps{
+        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+    }
+}
+        
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
@@ -78,12 +85,6 @@ stage("Maven Build") {
                 }
             }
         }
-    
-stage('MVN SONARQUBE'){
-    steps{
-        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
-    }
-}
 
 }
     }
