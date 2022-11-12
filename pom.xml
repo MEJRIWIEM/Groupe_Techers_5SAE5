@@ -124,10 +124,16 @@
 							<goal>report</goal>
 						</goals>
 						<configuration>
+							<dataFile>target/jacoco.exec</dataFile>
+							<!-- Sets the output directory for the code coverage report. -->
+							<outputDirectory>target/jacoco-ut</outputDirectory>
+
 							<formats>
 								<format>XML</format>
 							</formats>
 						</configuration>
+
+
 					</execution>
 				</executions>
 			</plugin>
