@@ -48,6 +48,7 @@
 			<artifactId>spring-test</artifactId>
 		</dependency>
 
+
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-boot-starter</artifactId>

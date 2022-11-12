@@ -78,4 +78,6 @@ public class OperateurServiceImplTest {
         );
         Assertions.assertEquals(op.getIdOperateur(), operateurService.retrieveOperateur(op.getIdOperateur()).getIdOperateur() );
     }
+
+
 }
