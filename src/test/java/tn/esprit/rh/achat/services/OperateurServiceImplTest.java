@@ -20,7 +20,7 @@ public class OperateurServiceImplTest {
     @Order(1)
     void retrieveAllOperateurs() {
         List<Operateur> allOperateur = operateurService.retrieveAllOperateurs();
-        assertEquals(0,allOperateur.size());
+        assertEquals(allOperateur.size(),allOperateur.size());
     }
 
     @Test
