@@ -1,11 +1,8 @@
 package tn.esprit.rh.achat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -26,12 +23,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.rh.achat.entities.CategorieFournisseur;
 import tn.esprit.rh.achat.entities.DetailFournisseur;
 import tn.esprit.rh.achat.entities.Fournisseur;
-import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.repositories.DetailFournisseurRepository;
 import tn.esprit.rh.achat.repositories.FournisseurRepository;
-import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 import tn.esprit.rh.achat.services.FournisseurServiceImpl;
-import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
 import java.util.*;
 
@@ -39,7 +33,7 @@ import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-public class FournisseurServiceImplMock {
+public class FournisseurServiceImplMockTest {
 
     @Mock
     FournisseurRepository fournisseurRepository;
