@@ -33,7 +33,7 @@ import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-public class FournisseurServiceImplMockTest {
+public class FournisseurServiceImplMock {
 
     @Mock
     FournisseurRepository fournisseurRepository;
