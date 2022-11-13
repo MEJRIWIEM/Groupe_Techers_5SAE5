@@ -94,8 +94,7 @@ stage("Maven Build") {
 
                 script { 
 
-                    sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID'
- 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
 
                 }
 

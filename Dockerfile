@@ -1,8 +1,3 @@
-FROM maven as build
-WORKDIR /app
-COPY . .
-RUN mvn install
-
 FROM openjdk:8-jdk-alpine
 EXPOSE 8089
 RUN ls
