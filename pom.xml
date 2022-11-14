@@ -82,6 +82,7 @@
 		</dependency>
 	</dependencies>
 
+
 	<distributionManagement>
 		<repository>
 			<id>maven-nexus-repo</id>
