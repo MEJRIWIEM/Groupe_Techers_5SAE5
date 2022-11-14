@@ -94,7 +94,7 @@ stage("Maven Build") {
 
                 script { 
 
-                    dockerImage = docker.build("SpringBootAchat")  
+                    dockerImage = docker.build("alaamoalla/springboot-achat")  
 
                 }
 
