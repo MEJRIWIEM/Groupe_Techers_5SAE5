@@ -45,10 +45,6 @@ public class FournisseurServiceImplMock {
     FournisseurServiceImpl fournisseurService;
 
 
-
-
-
-
     Fournisseur fournisseur = new Fournisseur(1L,"F1CODE","Je suis F1", CategorieFournisseur.ORDINAIRE,null,null,null);
 
     Fournisseur fournisseur4 = new Fournisseur(4L,"F4CODE","Je suis F4", CategorieFournisseur.ORDINAIRE,null,null,null);
