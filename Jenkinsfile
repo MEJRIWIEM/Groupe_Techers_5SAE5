@@ -131,4 +131,32 @@ stage("Maven Build") {
         } 
 
 }
+
+ post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeded!'
+             mail to: 'alaa.moalla.esprit@yopmail.com',
+             subject: "The Pipeline: ${currentBuild.fullDisplayName} succeeded",
+             body: "The Pipeline ${env.BUILD_URL} completed successfully."
+        }
+        unstable {
+            echo 'I am unstable :/'
+             mail to: 'alaa.moalla.esprit@yopmail.com',
+             subject: "Unstable Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+        }
+        failure {
+            echo 'I failed :('
+             mail to: 'alaa.moalla.esprit@yopmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+        }
+        changed {
+            echo 'Things were different before...'
+        }
+    }
     }
