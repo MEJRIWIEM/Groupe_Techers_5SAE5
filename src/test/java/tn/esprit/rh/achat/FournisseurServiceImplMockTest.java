@@ -17,7 +17,6 @@ import org.mockito.Mockito;
 
 
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 
 import tn.esprit.rh.achat.entities.CategorieFournisseur;
@@ -32,8 +31,7 @@ import java.util.*;
 
 
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest
-public class FournisseurServiceImplMock {
+public class FournisseurServiceImplMockTest {
 
     @Mock
     FournisseurRepository fournisseurRepository;
