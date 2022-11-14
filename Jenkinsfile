@@ -124,7 +124,7 @@ stage("Maven Build") {
 
             steps { 
 
-                sh "docker rmi $registry:$BUILD_NUMBER" 
+                sh "docker rmi alaamoalla/alpine:springboot-achat" 
 
             }
 
