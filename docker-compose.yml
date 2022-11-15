@@ -2,11 +2,11 @@ version: '3'
 services:
   mysqldb:
     container_name: mysqldb
-    image: mysql:5.7
+    image: mariadb:10.5
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD= "root"
-      - MYSQL_DATABASE= "achatdb"
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=achat
     ports:
       - "3306:3306"
     volumes:
