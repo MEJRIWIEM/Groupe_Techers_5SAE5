@@ -11,7 +11,7 @@ environment {
         NEXUS_URL = "172.10.0.140:8081"
         NEXUS_REPOSITORY = "java-app"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
-        registry = "alaamoalla/alpine" 
+        registry = "alaamoalla/springboot-achat" 
         registryCredential = 'dockerHub' 
         dockerImage = '' 
     }
@@ -94,7 +94,7 @@ stage("Maven Build") {
 
                 script { 
 
-                    dockerImage = docker.build("alaamoalla/springboot-achat:achat-spring")  
+                    dockerImage = docker.build("alaamoalla/springboot-achat:latest")  
 
                 }
 
