@@ -4,7 +4,6 @@ services:
     container_name: mysqldb
     image: mysql:5.7
     restart: unless-stopped
-    env_file: ./.env
     environment:
       - MYSQL_ROOT_PASSWORD= ""
       - MYSQL_DATABASE= "mysqldb"
@@ -17,7 +16,6 @@ services:
     image: alaamoalla/springboot-achat:latest
     container_name: achatproject
     restart: on-failure
-    env_file: ./.env
     ports:
       - 8089:8089
     environment:
