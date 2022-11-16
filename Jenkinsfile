@@ -120,15 +120,7 @@ stage("Maven Build") {
 
         } 
 
-        stage('Cleaning up') { 
-
-            steps { 
-
-                sh "docker rmi alaamoalla/springboot-achat:achat-spring" 
-
-            }
-
-        } 
+     
         
         stage('Docker Compose') {
             steps {
